@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { fetchWeather } from "./API/fetchWeather";
-import axios from "axios";
 
 export default function Weather() {
   const [query, setQuery] = useState("");
   const [Weather, setWeather] = useState("");
 
   const search = async (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       const data = await fetchWeather(query);
       setWeather(data);
       setQuery("");
     }
   };
+
   return (
     <div className="Container">
       <input
